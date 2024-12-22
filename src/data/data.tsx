@@ -45,7 +45,7 @@ import {
  */
 export const homePageMeta: HomepageMeta = {
   title: 'React Resume Template',
-  description: "Example site built with Tim Baker's react resume template",
+  description: "Example site built with Ahmed AlSabbahy's react resume template",
 };
 
 /**
@@ -69,7 +69,7 @@ export type SectionId = (typeof SectionId)[keyof typeof SectionId];
  */
 export const heroData: Hero = {
   imageSrc: heroImage,
-  name: `I'm Tim Baker.`,
+  name: `I'm Ahmed AlSabbahy.`,
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
@@ -340,23 +340,23 @@ export const contact: ContactSection = {
   items: [
     {
       type: ContactType.Email,
-      text: 'reachout@timbaker.me',
-      href: 'mailto:reachout@timbaker.me',
+      text: 'ahmed@sabbahy.codes',
+      href: 'mailto:ahmed@sabbahy.codes',
     },
     {
       type: ContactType.Location,
-      text: 'Victoria BC, Canada',
-      href: 'https://www.google.ca/maps/place/Victoria,+BC/@48.4262362,-123.376775,14z',
+      text: '6th of October City, Giza Governorate, Egypt',
+      href: 'https://www.google.com/maps/place/6th+of+October+City,+Giza+Governorate/@29.9646504,30.860242,31254m/data=!3m2!1e3!4b1!4m15!1m8!3m7!1s0x548f738bddb06171:0x38e8f3741ebb48ed!2sVictoria,+BC,+Canada!3b1!8m2!3d48.4284207!4d-123.3656444!16zL20vMDd5cHQ!3m5!1s0x145855e126df199d:0x24a6cf9d2fda5678!8m2!3d29.9611066!4d30.9295985!16zL20vMGJtMjVq?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D',
     },
     {
       type: ContactType.Instagram,
-      text: '@tbakerx',
-      href: 'https://www.instagram.com/tbakerx/',
+      text: '@ahmedsabbahy',
+      href: 'https://www.instagram.com/sabbahy.codes/',
     },
     {
       type: ContactType.Github,
-      text: 'tbakerx',
-      href: 'https://github.com/tbakerx',
+      text: 'ahmedsabbahy',
+      href: 'https://github.com/alsabbahy',
     },
   ],
 };
@@ -365,9 +365,9 @@ export const contact: ContactSection = {
  * Social items
  */
 export const socialLinks: Social[] = [
-  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/tbakerx'},
-  {label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/users/8553186/tim-baker'},
-  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/timbakerx/'},
-  {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/reactresume/'},
-  {label: 'Twitter', Icon: TwitterIcon, href: 'https://twitter.com/TimBakerx'},
+  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/alsabbahy'},
+  {label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/users/13487030/ahmed-alsabbahy'},
+  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/ahmedmostafaalsabbahy/'},
+  {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/sabbahy.codes/'},
+  {label: 'Twitter', Icon: TwitterIcon, href: 'https://twitter.com/@code__chronicle'},
 ];
