@@ -90,7 +90,7 @@ export const heroData: Hero = {
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
         In my free time time, you can catch me training in <strong className="text-stone-100">Gym</strong>, enjoying my
-        time with my family, or learning new things <strong className="text-stone-100">Tech</strong>.
+        time with my family, or learning new things <strong className="text-stone-100">Tech Trends</strong>.
       </p>
     </>
   ),
@@ -125,7 +125,6 @@ export const aboutData: About = {
 With a Nanodegree in Advanced Cloud Development and a React Developer certification, alongside experience at Sword Egypt and Amjaad Technology, I combine a strong Computer Software Engineering foundation with hands-on expertise to drive successful backend projects.`,
   aboutItems: [
     {label: 'Location', text: 'Cairo, Egypt', Icon: MapIcon},
-    {label: 'Age', text: '29', Icon: CalendarIcon},
     {label: 'Nationality', text: 'Egyptian', Icon: FlagIcon},
     {label: 'Interests', text: 'Family, Tech', Icon: SparklesIcon},
     {label: 'Study', text: 'Faculty of Engineering, Modern Academy', Icon: AcademicCapIcon},
