@@ -298,47 +298,117 @@ export const portfolioItems: PortfolioItem[] = [
  */
 export const education: TimelineItem[] = [
   {
-    date: 'April 2007',
-    location: 'Clown college',
-    title: 'Masters in Beer tasting',
-    content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
+    date: 'Sep 2013 - May 2018',
+    location: 'Faculty of Engineering, Modern Academy',
+    title: 'Bachelor of Engineering in Electrical Engineering',
+    content: (
+      <p>
+        I studied Electrical Engineering at Modern Academy, which is one of the best engineering schools in Egypt. I
+        learned a lot about the principles of electrical engineering, and I also majored in computer engineering.
+      </p>
+    ),
   },
   {
-    date: 'March 2003',
-    location: 'School of Business',
-    title: 'What did you study 101',
-    content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
+    date: 'October 2022 - December 2022',
+    location: 'Udacity',
+    title: 'Advanced Cloud Developer Nanodegree',
+    content: (
+      <p>
+        I studied Advanced Cloud Developer Nanodegree at Udacity, which I completed in 3 months. I learned a lot about
+        the principles of cloud development, and I also made a lot of projects using AWS services, Fullstack
+        development, and DevOps.
+      </p>
+    ),
   },
 ];
 
 export const experience: TimelineItem[] = [
   {
-    date: 'March 2010 - Present',
-    location: 'Awesome Development Company',
-    title: 'Senior UX Engineer',
+    date: 'November 2023 - Present',
+    location: 'LXT, inc.',
+    title: 'Senior Software Engineer',
     content: (
       <p>
-        Describe work, special projects, notable achievements, what technologies you have been working with, and
-        anything else that would be useful for an employer to know.
+        I'm working at{' '}
+        <a className="text-blue-500 font-bold" href="https://lxt.ai/">
+          LXT
+        </a>
+        , inc. as a Senior Software Engineer. I'm responsible for the development of the LXT data platform. I'm also
+        responsible for the mentoring of the junior engineers.
       </p>
     ),
   },
   {
-    date: 'March 2007 - February 2010',
-    location: 'Garage Startup Studio',
-    title: 'Junior bug fixer',
+    date: 'July 2023 - October 2023',
+    location: 'Sword Egypt',
+    title: 'Senior Fullstack Developer',
     content: (
       <p>
-        Describe work, special projects, notable achievements, what technologies you have been working with, and
-        anything else that would be useful for an employer to know.
+        I was working at{' '}
+        <a className="text-blue-500 font-bold" href="https://swordeg.com/">
+          Sword Egypt
+        </a>{' '}
+        as a Senior Fullstack Developer. I was responsible for the developing and mainting a Facility Management System
+        in React and Python Django. I was also responsible for part of the DevOps Operations on AWS, and the mentoring
+        of the junior engineers.
+      </p>
+    ),
+  },
+  {
+    date: 'February 2022 - July 2023',
+    location: 'Amjaad Technology',
+    title: 'Node.js Developer',
+    content: (
+      <p>
+        I was working at{' '}
+        <a className="text-blue-500 font-bold" href="https://amjaadiot.com/">
+          Amjaad Technology
+        </a>{' '}
+        as a Node.js Developer. I was responsible for the development of the{' '}
+        <a
+          className="text-blue-500 font-bold"
+          href="https://play.google.com/store/apps/details?id=com.thed.iometer&hl=en">
+          IOMeter
+        </a>{' '}
+        backend API services, which is a solution for smart meters, energy management and customer accounts billing for
+        multiple utilities in (Egypt, Jordan, Saudi Arabia, Turkey, Nigeria, and UAE).
+      </p>
+    ),
+  },
+  {
+    date: 'January 2021 - January 2022',
+    location: 'Symbios Consulting',
+    title: 'Software Engineer & Technology Consultant',
+    content: (
+      <p>
+        I was working at{' '}
+        <a className="text-blue-500 font-bold" href="https://symbios-consulting.com/">
+          Symbios Consulting
+        </a>{' '}
+        as a Software Engineer & Technology Consultant. I was responsible for the development of the{' '}
+        <a className="text-blue-500 font-bold" href="http://journey-opex.com/">
+          Operational Excellence
+        </a>{' '}
+        platform. I was also a consultant for the company to help them with their clients needs in technology and
+        software integrations.
+      </p>
+    ),
+  },
+  {
+    date: 'August 2020 - December 2020',
+    location: 'Override',
+    title: 'Backend Developer',
+    content: (
+      <p>
+        Override a software house, I was working at Override as a Backend Developer. I was responsible for the
+        development of Backend projects using Node.js, Nest.js.
       </p>
     ),
   },
 ];
 
 /**
- * Testimonial section
- */
+ * Testimonial section */
 export const testimonial: TestimonialSection = {
   imageSrc: testimonialImage,
   testimonials: [
