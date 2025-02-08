@@ -6,6 +6,7 @@ import {
   FlagIcon,
   MapIcon,
   SparklesIcon,
+  HeartIcon,
 } from '@heroicons/react/24/outline';
 
 import GithubIcon from '../components/Icon/GithubIcon';
@@ -45,16 +46,15 @@ import {
  */
 export const homePageMeta: HomepageMeta = {
   title: 'Sabbahy Codes',
-  description: "Sabbahy Codes is a website built with Next.js, Tailwind CSS, and TypeScript.",
+  description: 'Sabbahy Codes is a website built with Next.js, Tailwind CSS, and TypeScript.',
   ogImageUrl: 'https://sabbahy.codes/sabbahy.png',
   twitterCardType: 'summary_large',
   twitterTitle: 'Code Chronicles',
   twitterCreator: '@code__chronicle',
   twitterUrl: 'https://x.com/code__chronicle',
-  twitterDescription: 'Software Engineer, Fullstack developer, React, Node, TypeScript, JavaScript, E-Commerce, Web Application developer, It\'s my pleasure to be of service.',
+  twitterDescription:
+    "Software Engineer, Fullstack developer, React, Node, TypeScript, JavaScript, E-Commerce, Web Application developer, It's my pleasure to be of service.",
 };
-
-
 
 /**
  * Section definition
@@ -81,7 +81,7 @@ export const heroData: Hero = {
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm an Egyptian based <strong className="text-stone-100">Senior Software Engineer</strong>, currently working at{' '}
+        I'm an Egyptian <strong className="text-stone-100">Senior Software Engineer</strong>, currently working at{' '}
         <strong className="text-stone-100">LXT</strong> maintaining and developing the LXT data platform.
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
@@ -89,8 +89,6 @@ export const heroData: Hero = {
         time with my family, or learning new things <strong className="text-stone-100">Tech</strong>.
       </p>
     </>
-
-
   ),
   actions: [
     {
@@ -100,10 +98,18 @@ export const heroData: Hero = {
       Icon: ArrowDownTrayIcon,
     },
     {
+      href: "https://calendly.com/ahmed-alsabbahy/free-discussion-meeting",
+      text: 'Schedule a 30 min meeting',
+      primary: true,
+      Icon: CalendarIcon,
+
+    },
+    {
       href: `#${SectionId.Contact}`,
       text: 'Contact',
       primary: false,
     },
+
   ],
 };
 
@@ -112,17 +118,17 @@ export const heroData: Hero = {
  */
 export const aboutData: About = {
   profileImageSrc: profilepic,
-  description: `Use this bio section as your way of describing yourself and saying what you do, what technologies you like
-  to use or feel most comfortable with, describing your personality, or whatever else you feel like throwing
-  in.`,
+  description: `At LXT, I design secure and efficient backend solutions using Clean Coding and FastAPI. I collaborate closely with the Product team to translate technical requirements into robust solutions and mentor junior engineers to foster technical excellence.
+
+With a Nanodegree in Advanced Cloud Development and a React Developer certification, alongside experience at Sword Egypt and Amjaad Technology, I combine a strong Computer Software Engineering foundation with hands-on expertise to drive successful backend projects.`,
   aboutItems: [
     {label: 'Location', text: 'Cairo, Egypt', Icon: MapIcon},
     {label: 'Age', text: '29', Icon: CalendarIcon},
     {label: 'Nationality', text: 'Egyptian', Icon: FlagIcon},
-    {label: 'Interests', text: 'Gym, Family, Tech', Icon: SparklesIcon},
+    {label: 'Interests', text: 'Family, Tech', Icon: SparklesIcon},
     {label: 'Study', text: 'Faculty of Engineering, Modern Academy', Icon: AcademicCapIcon},
     {label: 'Employment', text: 'LXT, inc.', Icon: BuildingOffice2Icon},
-
+    {label: 'Hobbies', text: 'Gym, Reading, Cooking, Traveling', Icon: HeartIcon},
   ],
 };
 
@@ -134,16 +140,64 @@ export const skills: SkillGroup[] = [
     name: 'Spoken languages',
     skills: [
       {
-        name: 'English',
+        name: 'Arabic',
         level: 10,
       },
       {
-        name: 'French',
-        level: 4,
+        name: 'English',
+        level: 8,
       },
       {
-        name: 'Spanish',
+        name: 'Dutch',
+        level: 2,
+      },
+    ],
+  },
+  {
+    name: 'Programming languages',
+    skills: [
+      {
+        name: 'Javascript',
+        level: 9,
+      },
+      {
+        name: 'Python',
+        level: 9,
+      },
+      {
+        name: 'Typescript',
+        level: 8,
+      },
+      {
+        name: 'Golang',
         level: 3,
+      },
+      {
+        name: 'C#',
+        level: 5,
+      },
+    ],
+  },
+
+
+  {
+    name: 'Backend development',
+    skills: [
+      {
+        name: 'Node.js',
+        level: 9,
+      },
+      {
+        name: 'Nest.js',
+        level: 8,
+      },
+      {
+        name: 'FastAPI',
+        level: 8,
+      },
+      {
+        name: 'Golang',
+        level: 2,
       },
     ],
   },
@@ -161,40 +215,6 @@ export const skills: SkillGroup[] = [
       {
         name: 'GraphQL',
         level: 6,
-      },
-    ],
-  },
-  {
-    name: 'Backend development',
-    skills: [
-      {
-        name: 'Node.js',
-        level: 8,
-      },
-      {
-        name: 'Rust',
-        level: 5,
-      },
-      {
-        name: 'Golang',
-        level: 4,
-      },
-    ],
-  },
-  {
-    name: 'Mobile development',
-    skills: [
-      {
-        name: 'React Native',
-        level: 9,
-      },
-      {
-        name: 'Flutter',
-        level: 4,
-      },
-      {
-        name: 'Swift',
-        level: 3,
       },
     ],
   },
