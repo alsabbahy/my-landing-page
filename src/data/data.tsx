@@ -98,18 +98,16 @@ export const heroData: Hero = {
       Icon: ArrowDownTrayIcon,
     },
     {
-      href: "https://calendly.com/ahmed-alsabbahy/free-discussion-meeting",
+      href: 'https://calendly.com/ahmed-alsabbahy/free-discussion-meeting',
       text: 'Schedule a 30 min meeting',
       primary: true,
       Icon: CalendarIcon,
-
     },
     {
       href: `#${SectionId.Contact}`,
       text: 'Contact',
       primary: false,
     },
-
   ],
 };
 
@@ -178,7 +176,6 @@ export const skills: SkillGroup[] = [
       },
     ],
   },
-
 
   {
     name: 'Backend development',
