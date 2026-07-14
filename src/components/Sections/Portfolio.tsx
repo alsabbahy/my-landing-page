@@ -41,7 +41,8 @@ export default Portfolio;
 const ItemOverlay: FC<{item: PortfolioItem}> = memo(({item: {url, title, description}}) => {
   const [mobile, setMobile] = useState(false);
   const [showOverlay, setShowOverlay] = useState(false);
-  const linkRef = useRef<HTMLAnchorElement>(null);
+  const overlayRef = useRef<HTMLDivElement>(null);
+  const hasUrl = Boolean(url);
 
   useEffect(() => {
     // Avoid hydration styling errors by setting mobile in useEffect
@@ -49,36 +50,58 @@ const ItemOverlay: FC<{item: PortfolioItem}> = memo(({item: {url, title, descrip
       setMobile(true);
     }
   }, []);
-  useDetectOutsideClick(linkRef, () => setShowOverlay(false));
+  useDetectOutsideClick(overlayRef, () => setShowOverlay(false));
 
   const handleItemClick = useCallback(
     (event: MouseEvent<HTMLElement>) => {
       if (mobile && !showOverlay) {
         event.preventDefault();
-        setShowOverlay(!showOverlay);
+        setShowOverlay(true);
+        return;
+      }
+      if (!hasUrl) {
+        event.preventDefault();
       }
     },
-    [mobile, showOverlay],
+    [mobile, showOverlay, hasUrl],
   );
 
-  return (
-    <a
-      className={classNames(
-        'absolute inset-0 h-full w-full  bg-gray-900 transition-all duration-300',
-        {'opacity-0 hover:opacity-80': !mobile},
-        showOverlay ? 'opacity-80' : 'opacity-0',
-      )}
-      href={url}
-      onClick={handleItemClick}
-      ref={linkRef}
-      target="_blank">
-      <div className="relative h-full w-full p-4">
-        <div className="flex h-full w-full flex-col gap-y-2 overflow-y-auto overscroll-contain">
-          <h2 className="text-center font-bold text-white opacity-100">{title}</h2>
-          <p className="text-xs text-white opacity-100 sm:text-sm">{description}</p>
-        </div>
-        <ArrowTopRightOnSquareIcon className="absolute bottom-1 right-1 h-4 w-4 shrink-0 text-white sm:bottom-2 sm:right-2" />
+  const overlayClass = classNames(
+    'absolute inset-0 h-full w-full bg-gray-900 transition-all duration-300',
+    {'opacity-0 hover:opacity-80': !mobile},
+    showOverlay ? 'opacity-80' : 'opacity-0',
+  );
+
+  const body = (
+    <div className="relative h-full w-full p-4">
+      <div className="flex h-full w-full flex-col gap-y-2 overflow-y-auto overscroll-contain">
+        <h2 className="text-center font-bold text-white opacity-100">{title}</h2>
+        <p className="text-xs text-white opacity-100 sm:text-sm">{description}</p>
       </div>
-    </a>
+      {hasUrl ? (
+        <ArrowTopRightOnSquareIcon className="absolute bottom-1 right-1 h-4 w-4 shrink-0 text-white sm:bottom-2 sm:right-2" />
+      ) : null}
+    </div>
+  );
+
+  if (!hasUrl) {
+    return (
+      <div className={overlayClass} onClick={handleItemClick} ref={overlayRef} role="presentation">
+        {body}
+      </div>
+    );
+  }
+
+  return (
+    <div className={overlayClass} ref={overlayRef}>
+      <a
+        className="absolute inset-0 block h-full w-full"
+        href={url}
+        onClick={handleItemClick}
+        rel="noreferrer"
+        target="_blank">
+        {body}
+      </a>
+    </div>
   );
 });

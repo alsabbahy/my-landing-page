@@ -10,7 +10,6 @@ import InstagramIcon from '../../Icon/InstagramIcon';
 import LinkedInIcon from '../../Icon/LinkedInIcon';
 import TwitterIcon from '../../Icon/TwitterIcon';
 import Section from '../../Layout/Section';
-import ContactForm from './ContactForm';
 
 const ContactValueMap: Record<ContactType, ContactValue> = {
   [ContactType.Email]: {Icon: EnvelopeIcon, srLabel: 'Email'},
@@ -25,6 +24,8 @@ const ContactValueMap: Record<ContactType, ContactValue> = {
 
 const Contact: FC = memo(() => {
   const {headerText, description, items} = contact;
+  const emailItem = items.find(item => item.type === ContactType.Email);
+
   return (
     <Section className="bg-neutral-800" sectionId={SectionId.Contact}>
       <div className="flex flex-col gap-y-6">
@@ -33,8 +34,15 @@ const Contact: FC = memo(() => {
           <h2 className="text-2xl font-bold text-white">{headerText}</h2>
         </div>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          <div className="order-2 col-span-1 md:order-1 ">
-            <ContactForm />
+          <div className="order-2 col-span-1 flex flex-col justify-center gap-y-4 md:order-1">
+            <p className="prose leading-6 text-neutral-300">Prefer email? Reach me directly — I read every message.</p>
+            {emailItem?.href ? (
+              <a
+                className="inline-flex w-fit items-center rounded-md bg-orange-500 px-4 py-2 text-sm font-bold text-white hover:bg-orange-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
+                href={emailItem.href}>
+                Email {emailItem.text}
+              </a>
+            ) : null}
           </div>
           <div className="order-1 col-span-1 flex flex-col gap-y-4 md:order-2">
             <p className="prose leading-6 text-neutral-300">{description}</p>
@@ -51,6 +59,7 @@ const Contact: FC = memo(() => {
                           {'hover:text-white': href},
                         )}
                         href={href}
+                        rel="noreferrer"
                         target="_blank">
                         <Icon aria-hidden="true" className="h-4 w-4 flex-shrink-0 text-neutral-100 sm:h-5 sm:w-5" />
                         <span className="ml-3 text-sm sm:text-base">{text}</span>
@@ -67,5 +76,5 @@ const Contact: FC = memo(() => {
   );
 });
 
-Contact.displayName = 'About';
+Contact.displayName = 'Contact';
 export default Contact;

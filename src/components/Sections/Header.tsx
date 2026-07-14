@@ -4,17 +4,20 @@ import classNames from 'classnames';
 import Link from 'next/link';
 import {FC, Fragment, memo, useCallback, useMemo, useState} from 'react';
 
-import {SectionId} from '../../data/data';
+import {SectionId, testimonial} from '../../data/data';
 import {useNavObserver} from '../../hooks/useNavObserver';
 
 export const headerID = 'headerNav';
 
 const Header: FC = memo(() => {
   const [currentSection, setCurrentSection] = useState<SectionId | null>(null);
-  const navSections = useMemo(
-    () => [SectionId.About, SectionId.Resume, SectionId.Portfolio, SectionId.Testimonials, SectionId.Contact],
-    [],
-  );
+  const navSections = useMemo(() => {
+    const sections: SectionId[] = [SectionId.About, SectionId.Resume, SectionId.Portfolio, SectionId.Contact];
+    if (testimonial.testimonials.length > 0) {
+      sections.splice(3, 0, SectionId.Testimonials);
+    }
+    return sections;
+  }, []);
 
   const intersectionHandler = useCallback((section: SectionId | null) => {
     section && setCurrentSection(section);

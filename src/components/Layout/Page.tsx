@@ -5,36 +5,62 @@ import {memo, PropsWithChildren} from 'react';
 
 import {HomepageMeta} from '../../data/dataDef';
 
-const Page: NextPage<PropsWithChildren<HomepageMeta>> = memo(({children, title, description}) => {
-  const {asPath: pathname} = useRouter();
+const SITE_ORIGIN = 'https://ahmed.alsabbahy.com';
 
-  return (
-    <>
-      <Head>
-        <title>{title}</title>
-        <meta content={description} name="description" />
+const Page: NextPage<PropsWithChildren<HomepageMeta>> = memo(
+  ({
+    children,
+    title,
+    description,
+    ogImageUrl,
+    twitterCardType,
+    twitterTitle,
+    twitterSite,
+    twitterCreator,
+    twitterDomain,
+    twitterUrl,
+    twitterDescription,
+    twitterImageUrl,
+  }) => {
+    const {asPath: pathname} = useRouter();
+    const canonicalUrl = `${SITE_ORIGIN}${pathname === '/' ? '' : pathname}`;
+    const ogImage = ogImageUrl ?? twitterImageUrl;
 
-        {/* several domains list the same content, make sure google knows we mean this one. */}
-        <link href={`https://reactresume.com${pathname}`} key="canonical" rel="canonical" />
+    return (
+      <>
+        <Head>
+          <title>{title}</title>
+          <meta content={description} name="description" />
 
-        <link href="/favicon.ico" rel="icon" sizes="any" />
-        <link href="/icon.svg" rel="icon" type="image/svg+xml" />
-        <link href="/apple-touch-icon.png" rel="apple-touch-icon" />
-        <link href="/site.webmanifest" rel="manifest" />
+          <link href={canonicalUrl} key="canonical" rel="canonical" />
 
-        {/* Open Graph : https://ogp.me/ */}
-        <meta content={title} property="og:title" />
-        <meta content={description} property="og:description" />
-        <meta content={`https://reactresume.com${pathname}`} property="og:url" />
+          <link href="/favicon.ico" rel="icon" sizes="any" />
+          <link href="/icon.svg" rel="icon" type="image/svg+xml" />
+          <link href="/apple-touch-icon.png" rel="apple-touch-icon" />
+          <link href="/site.webmanifest" rel="manifest" />
 
-        {/* Twitter: https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/markup */}
-        <meta content={title} name="twitter:title" />
-        <meta content={description} name="twitter:description" />
-      </Head>
-      {children}
-    </>
-  );
-});
+          {/* Open Graph : https://ogp.me/ */}
+          <meta content={title} property="og:title" />
+          <meta content={description} property="og:description" />
+          <meta content={canonicalUrl} property="og:url" />
+          <meta content="website" property="og:type" />
+          {ogImage ? <meta content={ogImage} property="og:image" /> : null}
+
+          {/* Twitter: https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/markup */}
+          {twitterCardType ? <meta content={twitterCardType} name="twitter:card" /> : null}
+          <meta content={twitterTitle ?? title} name="twitter:title" />
+          <meta content={twitterDescription ?? description} name="twitter:description" />
+          {twitterUrl ? <meta content={twitterUrl} name="twitter:url" /> : null}
+          {twitterSite ? <meta content={twitterSite} name="twitter:site" /> : null}
+          {twitterCreator ? <meta content={twitterCreator} name="twitter:creator" /> : null}
+          {twitterDomain ? <meta content={twitterDomain} name="twitter:domain" /> : null}
+          {twitterImageUrl ?? ogImage ? <meta content={twitterImageUrl ?? ogImage} name="twitter:image" /> : null}
+        </Head>
+        {children}
+      </>
+    );
+  },
+);
 
 Page.displayName = 'Page';
 export default Page;
