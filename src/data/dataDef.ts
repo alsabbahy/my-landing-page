@@ -7,7 +7,7 @@ export interface HomepageMeta {
   title: string;
   description: string;
   ogImageUrl?: string;
-  twitterCardType?: 'summary' | 'summary_large';
+  twitterCardType?: 'summary' | 'summary_large_image';
   twitterTitle?: string;
   twitterSite?: string;
   twitterCreator?: string;
@@ -79,7 +79,8 @@ export interface SkillGroup {
 export interface PortfolioItem {
   title: string;
   description: string;
-  url: string;
+  /** Real project destination; omit when there is no public URL (no template hosts). */
+  url?: string;
   image: string | StaticImageData;
 }
 

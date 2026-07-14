@@ -1,10 +1,8 @@
 {
-  "name": "Ahmed AlSabbahy",
-  "short_name": "Sabbahy",
+  "name": "Ahmed Alsabbahy",
+  "short_name": "Alsabbahy",
   "icons": [
-    {"src": "/icon-192.png", "type": "image/png", "sizes": "192x192"},
-
-    {"src": "/icon-512.png", "type": "image/png", "sizes": "512x512"}
+    {"src": "/sabbahy.png", "type": "image/png", "sizes": "512x512"}
   ],
   "theme_color": "#515455",
   "background_color": "#515455",
